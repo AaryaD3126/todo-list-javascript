@@ -1,0 +1,141 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.title-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: crimson;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.title-container h2 {
+  font-size: 22px;
+  color: whitesmoke;
+
+}
+
+.title-container form input {
+  color: black;
+  padding: 10px;
+  width: 70%;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.title-container form button {
+  padding: 10px;
+  width: 15%;
+  background-color: #535050;
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 10px;
+}
+
+#task-list {
+  padding: 20px;
+  width: 100%;
+  height: 60vh;
+  overflow-y: auto;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#task-list::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.task {
+  background-color: #535050;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.item-text {
+  width: 70%;
+}
+
+.operation {
+  display: flex;
+  gap: 20px;
+  margin: 14px;
+}
+.operation_btn{
+  background:none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.operation_btn i:hover{
+  transform: scale(1.1);
+  font-size: 22px;
+}
+@media screen and (max-width:600px) {
+  .task {
+    font-size: 18px;
+  }
+
+  .item-text {
+    width: 100%;
+    margin: auto;
+
+  }
+
+  .operation {
+    width: fit-content;
+    gap: 20px;
+    margin: 12px auto;
+  }
+
+  .operation i {
+    font-size: 18px;
+  }
+
+  .task {
+    padding: 10px;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  .input-form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #task-input {
+    width: 100%;
+  }
+
+  #add-task-btn {
+    width: fit-content;
+  }
+}
