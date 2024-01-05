@@ -92,7 +92,9 @@ body {
   transition: background-color 0.3s;
   margin-bottom: 10px;
 }
-
+#task-list{
+  padding:0!important;
+}
 .task:hover {
   background-color: #ff9900;
 }
