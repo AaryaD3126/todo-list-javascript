@@ -1,141 +1,138 @@
-html {
-  height: 100%;
-  width: 100%;
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .main-container {
   width: 80%;
-  height: 100%;
-  display: block;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-container {
-  width: 100%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  background: crimson;
-  border-radius: 10px;
+  background: linear-gradient(45deg, #ff3399, #ff9900);
+  border-radius: 15px;
   padding: 20px;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 30px;
+  transform: translateX(-100%);
+  width: 80%;
+  opacity: 0.4; /* Set opacity to your preference (0.0 to 1.0) */
 }
 
 .title-container h2 {
-  font-size: 22px;
-  color: whitesmoke;
-
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-.title-container form input {
-  color: black;
-  padding: 10px;
-  width: 70%;
+.input-form {
+  display: flex;
+  align-items: center;
+}
+
+.input-form input {
+  flex: 1;
+  color: #1a1a1a;
+  padding: 15px;
   outline: none;
-  border-radius: 10px;
   border: none;
-  font-size: 20px;
+  background: #fff;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.title-container form button {
-  padding: 10px;
-  width: 15%;
-  background-color: #535050;
-  color: white;
-  font-size: 22px;
+.input-form button {
+  padding: 15px;
+  background-color: #ff9900;
+  color: #fff;
+  font-size: 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-#task-list {
-  padding: 20px;
+.input-form button:hover,
+.input-form input:focus {
+  background-color: #ff3399;
+  color: #1a1a1a;
+}
+
+.task-container {
   width: 100%;
-  height: 60vh;
+  height:70vh;
   overflow-y: auto;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
 }
-
-#task-list::-webkit-scrollbar {
-  display: none;
-  /* Safari and Chrome */
+.task-container  {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
-
+.task-container::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 .task {
-  background-color: #535050;
+  background-color: #ff3399;
   font-size: 20px;
-  color: white;
+  color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-  border-radius: 10px;
+  flex-direction: column; /* Adjusted to column layout for better responsiveness */
+  padding: 15px;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
 
+.task:hover {
+  background-color: #ff9900;
 }
 
 .item-text {
-  width: 70%;
+  flex: 1;
+  margin-bottom: 10px; /* Added margin for better spacing between text and buttons */
 }
 
-.operation {
-  display: flex;
-  gap: 20px;
-  margin: 14px;
-}
-.operation_btn{
-  background:none;
+.operation_btn {
+  background: none;
   border: none;
   cursor: pointer;
   font-size: 20px;
+  color: #ff9900;
+  transition: transform 0.3s, font-size 0.3s;
 }
-.operation_btn i:hover{
+
+.operation_btn i:hover {
   transform: scale(1.1);
   font-size: 22px;
 }
-@media screen and (max-width:600px) {
-  .task {
-    font-size: 18px;
-  }
 
-  .item-text {
-    width: 100%;
-    margin: auto;
 
-  }
-
-  .operation {
-    width: fit-content;
-    gap: 20px;
-    margin: 12px auto;
-  }
-
-  .operation i {
-    font-size: 18px;
-  }
-
-  .task {
-    padding: 10px;
-    flex-direction: column-reverse;
-    gap: 20px;
-  }
-
-  .main-container {
-    width: 100%;
-  }
-
+@media screen and (max-width: 600px) {
   .input-form {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
 
-  #task-input {
+  .input-form input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .input-form button {
     width: 100%;
   }
-
-  #add-task-btn {
-    width: fit-content;
+  .task {
+    padding: 15px; 
   }
+  
 }
